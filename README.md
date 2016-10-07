@@ -13,11 +13,11 @@ install Puppet Enterprise
 
 awsoracledemo::nodes_hash:
  server1:
+ - name: oracle-server1
  - image_id: ami-12345678
  - role: oracle
- - password: P@ssw0rd!
  server2:
+ - name: other-server1
  - image_id: ami-12345678
  - role: other
- - password: P@ssw0rd!
 
