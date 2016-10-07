@@ -1,0 +1,4 @@
+class awsoracledemo::nodes::oracle {
+
+
+}
