@@ -9,12 +9,11 @@ class awsoracledemo::nodes (
 
   $nodekeys.each |$node| {
     awsoracledemo::ec2instance { $node:
-#      nodename           => $node['name'],
-      image_id           => $awsoracledemo::params::centos7, #$node['image_id'],
+      image_id           => $nodes["$node"]['image_id'],
       pp_created_by      => 'chris.matteson', #$ec2_tags['created_by'],
       key_name           => $awskey,
       pe_master_hostname => $::ec2_local_hostname,
-#      role               => $node['role'],
+      role               => $nodes["$node"]['role'],
     }
   }
 

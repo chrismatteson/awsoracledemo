@@ -11,7 +11,7 @@ class awsoracledemo::nodes::oracledb {
                           'linuxamd64_12102_database')
   $download_dir        = hiera('oracle_download_dir', '/install')
   $download_src        = hiera('oracle_download_src',
-                          'http://master.inf.puppet.vm/oracle_db_install')
+                          'http://ip-10-90-10-131.us-west-2.compute.internal/oracle_db_install')
   $ora_groups          = hiera('oracle_groups', ['oinstall','dba' ,'oper'])
   $ora_gid             = hiera('oracle_gid', 'oinstall')
   $ora_user            = hiera('oracle_user', 'oracle')

@@ -18,7 +18,7 @@ class awsoracledemo::params (
   case $::ec2_region {
     # North America
     'us-west-2': {
-      $security_groups = ['tse-agents','tse-crossconnect']
+      $security_groups = ['tse-us-west-2-agents','tse-us-west-2-crossconnect']
       $windows2012 = 'ami-4dbcb67d'
       $windows7 = 'ami-4dbcb67d'
       $centos7 = 'ami-d440a6e7'
@@ -47,12 +47,13 @@ class awsoracledemo::params (
     }
   }
 
+$subnet = 'tse-us-west-2-avza'
 #  case $::ec2_placement_availability_zone {
 ##    'us-west-2a', 'ap-southeast-2a', 'eu-west-1a': {
 #      $subnet = 'tse-subnet-avza-1'
 #    }
 #    'us-west-2b', 'ap-southeast-2b', 'eu-west-1b': {
-      $subnet = 'tse-subnet-avzb-1'
+#      $subnet = 'tse-subnet-avzb-1'
 #    }
 #    default: {
 #      fail("This module is only meant for aws, ec2_regions: us-west-2, ap-southeast-2, eu-west-1")

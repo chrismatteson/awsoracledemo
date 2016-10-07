@@ -2,7 +2,7 @@
 
 # ERB generated userdata script
 
-PE_MASTER='<%= @pe_master_hostname %>'
+PE_MASTER='<%= @fqdn %>'
 AWS_INSTANCE_ID=$(curl -s http://169.254.169.254/latest/meta-data/instance-id)
 AWS_REGION=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone | sed 's/.$//')
 

@@ -12,7 +12,7 @@ define awsoracledemo::ec2instance (
   $pp_department = 'TSE',
   $key_name,
   $pe_master_hostname,
-#  $role,
+  $role,
 ) {
 
   ec2_instance { $nodename:
