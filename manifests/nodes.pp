@@ -2,17 +2,19 @@ class awsoracledemo::nodes (
   $nodes = hiera_hash(awsoracledemo::nodes_hash, $awsoracledemo::params::nodes),
 ) inherits awsoracledemo::params {
 
-  $public_key = split($ec2_public_keys_0_openssh_key, ' ')
+  $public_key = split($ec2_metadata['public-keys']['0']['openssh-key'], ' ')
   $awskey = $public_key[2]
 
-  $nodes.each |$node| {
+  $nodekeys = keys($nodes)
+
+  $nodekeys.each |$node| {
     awsoracledemo::ec2instance { $node:
-      nodename           => $node,
-      image_id           => $node['image_id'],
-      pp_created_by      => $ec2_tags['created_by'],
+#      nodename           => $node['name'],
+      image_id           => $awsoracledemo::params::centos7, #$node['image_id'],
+      pp_created_by      => 'chris.matteson', #$ec2_tags['created_by'],
       key_name           => $awskey,
       pe_master_hostname => $::ec2_local_hostname,
-      role               => $node['role'],
+#      role               => $node['role'],
     }
   }
 

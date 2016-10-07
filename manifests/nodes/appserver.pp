@@ -1,4 +1,0 @@
-class awsoracledemo::nodes::oracle {
-
-
-}
