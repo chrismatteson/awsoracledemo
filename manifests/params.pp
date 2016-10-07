@@ -1,14 +1,14 @@
-class windowstraininglab::params (
-  $students = {
-    'testing' => {
-       'accountname' => 'testing',
-       'fullname'    => 'testing lastname',
-       'password'    => 'P@ssw0rd!',
+class awsoracledemo::params (
+  $nodes = {
+    'server-oracle-1' => {
+       'image_id' => 'ami-d440a6e7',
+       'role'     => 'oracledb',
+       'password' => 'P@ssw0rd!',
     },
-    'moretest' => {
-       'accountname' => 'moretest',
-       'fullname'    => 'moretest lastname',
-       'password'    => 'P@ssw0rd!',
+    'server-other-1' => {
+       'image_id' => 'ami-d440a6e7',
+       'role'     => 'other',
+       'password' => 'P@ssw0rd!',
     }
   }
 ) {

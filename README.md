@@ -8,12 +8,16 @@ In order to use this module, do the following steps:
 install Puppet Enterprise
 5) Git clone this project to the modules directory
  - https://github.com/chrismatteson/awsoracledemo
-6) Run the script at windowstrainingla/scripts/deploy.sh
+6) Run the script at awsoracledemo/scripts/deploy.sh
 7) Add nodes to the common.yaml of hiera in this format:
 
-windowstraininglab::nodes_hash:
+awsoracledemo::nodes_hash:
  server1:
+ - image_id: ami-12345678
+ - role: oracle
  - password: P@ssw0rd!
  server2:
+ - image_id: ami-12345678
+ - role: other
  - password: P@ssw0rd!
 
